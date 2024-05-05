@@ -1,23 +1,23 @@
 """
 Documentation:
     1) Game store :
-        Spongebob Test Drive
-         It is a game to help Sponge Bob to obtain a driver's license and consists of 3 starting stages,
-         which is the beginning of the game, a two-dimensional window containing the start order and the exit order.
-         The stages of the game, which is a three-dimensional window,
-         in which you must collect stars and not injure the fish and the diver so as not to lose.
-         The final stages consist of two cases or winning or losing if you win you get the license and you can exit only
-         but if you lose you can start over or exit.
-         Some extra detail:
-         When a thickness is injured, the speed decreases, and when a star is assembled, the speed increases.
+         Spongebob Driving Test
+         It is a game to help Spongebob to get the driver's license and consists of 3 stages,
+         First one, which is the beginning of the game, a two-dimensional window to start or end.
+         The stage of the game, which is a three-dimensional window,
+         in which you must collect stars and not injure the fish and the diver.
+         The final stage consists of two cases winning or losing. 
+         If you win, you get the license and you exit.
+         or if you lose, you can start again or exit.
+         extra details:
+         When a fish is injured, the speed decreases, and when a star is token, the speed increases.
 
-
-    2) info about us :
-    Team 5 from Factory of engineering tanta university:
+    2) about us :
+    Team 5 from faculty of engineering Tanta university:
     1- Abdelhamed Ragheb Elhafny
     2- Samar Shaaban Ramadan
     3- Salma Waleed Abdulshakoor
-    4- Salma Mohamed Hassan
+    4- Salma Hassan 
     5- Mariam Hassanin Mohammed
     6- Fatma Nasser Atallah
     7- Menna Ehab Shoman
@@ -27,7 +27,7 @@ Documentation:
     11- Habiba Mohammed Al Sharqawi
     12- Mahmoud Kamal Alsadani
 
-    3) Under the supervision Dr/ mohamed Ali and assistance of Eng/ mohammed El koumy .
+    3) Supervised by Dr/ Mohamed Ali and Eng/ Mohammed El koumy .
 
 """
 ######################################################################
