@@ -504,7 +504,7 @@ def keyboard_player(key, m_x, m_y):
         next_px -= delta_x
     elif key == GLUT_KEY_RIGHT and next_px < 8 and currentstate == 1:
         next_px += delta_x
-    print(player.x, player.y, player.z)
+    # print(player.x, player.y, player.z)
 
 
 ######################################################################
@@ -513,14 +513,14 @@ def keyboard_player(key, m_x, m_y):
 def game_status_control(key, c_x, c_y):
     global currentstate, player, camara1, zFar, string_postion
     if key == b'\x0D' and currentstate in [0, 3]:  # Enter
-        print("EnterGame :) Wait a 1s please !")
+        # print("EnterGame :) Wait a 1s please !")
         player = PLAYER(0, 1.5, -5, 2)
         camara1 = Camera(0, 7, 15, 0, 0, -zFar)
         string_postion = DRAWSTRING(-X_WIDTH, Y_WIDTH - 2, -3, "L I V E S  : ")
         currentstate = 1
 
     elif key == b'\x1B' and currentstate in [0, 2, 3]:  # ESC
-        print("GoodBye :D")
+        # print("GoodBye :D")
         sys.exit(0)
 
 
