@@ -20,7 +20,8 @@ class PLAYER:
 
 
 class DRAWSTRING:
-    def __init__(self, x, y, z):
+    def __init__(self, x, y, z, text):
         self.x = x
         self.y = y
         self.z = z
+        self.text = text

@@ -3,7 +3,7 @@ from OpenGL.GL import *
 from OpenGL.GLU import *
 import pygame
 from variables import *
-from tecture import *
+from texture import *
 from demo import *
 from sound import *
 

@@ -9,16 +9,11 @@ zNear = 0.1
 zFar = 850
 X_WIDTH = 10
 Y_WIDTH = 15
-tectureconstant = 30
+textureconstant = 30
 groundconstant = 60
 
-# ################################ Text (separated) #########################################
-STRING = "Degrees : "
-Level1_score = 20
-level = 0
 
 ################################# Point #########################################
-# POINT_SIZE = 4
-POSITIONS = [-8, -4, 0, 4, 8]  # -4 0
+POSITIONS = [-8, -4, 0, 4, 8]
 pointsPlus = []
 pointsMinus = []

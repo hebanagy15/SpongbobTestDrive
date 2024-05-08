@@ -1,33 +1,33 @@
 """
 Documentation:
-    1) Game store :
-        Spongebob Test Drive
-         It is a game to help Sponge Bob to obtain a driver's license and consists of 3 starting stages,
-         which is the beginning of the game, a two-dimensional window containing the start order and the exit order.
-         The stages of the game, which is a three-dimensional window,
-         in which you must collect stars and not injure the fish and the diver so as not to lose.
-         The final stages consist of two cases or winning or losing if you win you get the license and you can exit only
-         but if you lose you can start over or exit.
-         Some extra detail:
-         When a thickness is injured, the speed decreases, and when a star is assembled, the speed increases.
+    1) Game story:
+         Spongebob Driving Test
+         It is a game to help Spongebob to get the driver's license and consists of 3 stages,
+         First one, which is the beginning of the game, a two-dimensional window to start or end.
+         Second one, which is a three-dimensional window,
+         in which you collect stars and not injure the fish and the diver.
+         The last, consists of two cases winning or losing. 
+         If you win, you get the license and exit.
+         If you lose, you start again or exit.
+         More details:
+         When a fish is injured, the speed decreases, and when a star is token, the speed increases.
 
-
-    2) info about us :
-    Team 5 from Factory of engineering tanta university:
+    2) about us :
+    Team 5 from faculty of engineering Tanta university:
     1- Abdelhamed Ragheb Elhafny
     2- Samar Shaaban Ramadan
     3- Salma Waleed Abdulshakoor
-    4- Salma Mohamed Hassan
+    4- Salma Hassan 
     5- Mariam Hassanin Mohammed
-    6- Fatma Nasser Atallah
+    6- Fatma Nasser Ataallah
     7- Menna Ehab Shoman
     8- Mona Muhammad Ayoub
     9- Heba Abdel Moneim Nagy
     10- Nourhan Sameh Fayyad
-    11- Habiba Mohammed Al Sharqawi
-    12- Mahmoud Kamal Alsadani
+    11- Habiba Mohammed El-Sharqawi
+    12- Mahmoud Kamal El-Sadani
 
-    3) Under the supervision Dr/ mohamed Ali and assistance of Eng/ mohammed El koumy .
+    3) Supervised by Dr/ Mohamed Ali and Eng/ Mohammed El-koumy.
 
 """
 ######################################################################
@@ -50,9 +50,9 @@ import pygame
 #####################################################################
 ########################### Game library ###########################
 #####################################################################
-from tecture import *
+from texture import *
 from variables import *
-from player import *
+from Objects import *
 import xx_tryWin
 from sound import *
 from demo import *
@@ -62,11 +62,12 @@ from demo import *
 ######################################################################
 player = PLAYER(0, 1.5, -5, 2)
 camara1 = Camera(0, 7, 15, 0, 0, -zFar)
-string_postion = DRAWSTRING(-X_WIDTH, Y_WIDTH - 2, -3)
+string_postion = DRAWSTRING(-X_WIDTH, Y_WIDTH - 2, -3, "L I V E S  : ")
 
 ######################################################################
 ########################## Game status ###############################
 ######################################################################
+
 next_px = player.x  # feature point
 delta_z = 1
 delta_x = .45678
@@ -104,6 +105,7 @@ def reposition_camera(inter_frame=0):
 ###########################draw functions ############################
 ######################################################################
 def draw_scene():
+    global textureconstant
     zOfFrontWall = zFar
     glPushMatrix()
     # Front image
@@ -127,10 +129,10 @@ def draw_scene():
     glBindTexture(GL_TEXTURE_2D, texture_names[2])
     glColor3f(1, 1, 1)
     glBegin(GL_QUADS)
-    glTexCoord2f(tectureconstant, 0)
+    glTexCoord2f(textureconstant, 0)
     glVertex3f(X_WIDTH + 5, Y_WIDTH, 0)
 
-    glTexCoord2f(tectureconstant, 1)
+    glTexCoord2f(textureconstant, 1)
     glVertex3f(-X_WIDTH - 5, Y_WIDTH, 0)
 
     glTexCoord2f(1, 1)
@@ -150,10 +152,10 @@ def draw_scene():
     glTexCoord2f(0, 1)
     glVertex3f(-X_WIDTH - 5, Y_WIDTH, 0)
 
-    glTexCoord2f(tectureconstant, 1)
+    glTexCoord2f(textureconstant, 1)
     glVertex3f(-X_WIDTH - 5, Y_WIDTH, -zOfFrontWall - 20)
 
-    glTexCoord2f(tectureconstant, 0)
+    glTexCoord2f(textureconstant, 0)
     glVertex3f(-X_WIDTH - 5, 0, -zOfFrontWall - 20)
     glEnd()
 
@@ -168,10 +170,10 @@ def draw_scene():
     glTexCoord2f(0, 1)
     glVertex3f(X_WIDTH + 5, Y_WIDTH, 0)
 
-    glTexCoord2f(tectureconstant, 1)
+    glTexCoord2f(textureconstant, 1)
     glVertex3f(X_WIDTH + 5, Y_WIDTH, -zOfFrontWall - 20)
 
-    glTexCoord2f(tectureconstant, 0)
+    glTexCoord2f(textureconstant, 0)
     glVertex3f(X_WIDTH + 5, 0, -zOfFrontWall - 20)
     glEnd()
 
@@ -424,7 +426,7 @@ def draw_game(inter_frame=0):
     initPositivePoints(pointsPlus)
 
     glBindTexture(GL_TEXTURE_2D, -1)
-    STRING = "L I V E S  : " + str(player.live)
+    STRING = string_postion.text + str(player.live)
     drawText(STRING, inter_frame=inter_frame)
 
     draw_player(inter_frame=inter_frame)
@@ -514,7 +516,7 @@ def game_status_control(key, c_x, c_y):
         print("EnterGame :) Wait a 1s please !")
         player = PLAYER(0, 1.5, -5, 2)
         camara1 = Camera(0, 7, 15, 0, 0, -zFar)
-        string_postion = DRAWSTRING(-X_WIDTH, Y_WIDTH - 2, -3)
+        string_postion = DRAWSTRING(-X_WIDTH, Y_WIDTH - 2, -3, "L I V E S  : ")
         currentstate = 1
 
     elif key == b'\x1B' and currentstate in [0, 2, 3]:  # ESC
